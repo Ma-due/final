@@ -748,7 +748,7 @@ alertmanager:
 ## Using default values from https://github.com/grafana/helm-charts/blob/main/charts/grafana/values.yaml
 ##
 grafana:
-  enabled: true
+  enabled: false
   namespaceOverride: "grafana"
 
   ## ForceDeployDatasources Create datasource configmap even if grafana deployment has been disabled
@@ -2298,7 +2298,7 @@ prometheus:
   # Service for external access to sidecar
   # Enabling this creates a service to expose thanos-sidecar outside the cluster.
   thanosServiceExternal:
-    enabled: false
+    enabled: True
     annotations: {}
     labels: {}
     loadBalancerIP: ""
@@ -3112,7 +3112,7 @@ prometheus:
     thanos:
       image: quay.io/thanos/thanos:v0.30.1
       objectStorageConfig:
-        key: thanos.yaml
+        key: s3.yaml
         name: thanos-objstore-config
       # secretProviderClass:
       #   provider: gcp
