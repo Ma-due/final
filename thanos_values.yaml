@@ -75,9 +75,9 @@ objstoreConfig: |-
   type: s3
   config:
     bucket: 5ka-thanos
-    endpoint: vpce-0fc70d7161ba1922d-kq3wlvys.s3.ap-northeast-2.vpce.amazonaws.com
-    access_key: AKIAXJYEGVIT3BHHDM44
-    secret_key: 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
+    endpoint:
+    access_key: 
+    secret_key: 
 ## @param indexCacheConfig The [index cache configuration](https://thanos.io/tip/components/store.md/)
 ## Specify content for index-cache.yml
 ##
@@ -177,7 +177,7 @@ query:
   ## @param query.dnsDiscovery.sidecarsNamespace Sidecars namespace to discover them using DNS discovery
   ##
   dnsDiscovery:
-    enabled: true
+    enabled: false
     sidecarsService: "prometheus-thanos-discovery"
     sidecarsNamespace: "prometheus"
   ## @param query.stores Statically configure store APIs to connect with Thanos Query
