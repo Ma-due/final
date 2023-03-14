@@ -74,17 +74,10 @@ image:
 objstoreConfig: |-
   type: s3
   config:
-<<<<<<< HEAD
     bucket: test-thanos-s3
     endpoint: s3-ap-northeast-2.amazonaws.com
     access_key: AKIAQASHREF4URWKPP6D
     secret_key: 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
-=======
-    bucket: 5ka-thanos
-    endpoint:
-    access_key: 
-    secret_key: 
->>>>>>> 45761bcb1cfa2d346c1d8b90cb27a2fc412a9abe
 ## @param indexCacheConfig The [index cache configuration](https://thanos.io/tip/components/store.md/)
 ## Specify content for index-cache.yml
 ##
@@ -177,24 +170,21 @@ query:
   logFormat: logfmt
   ## @param query.replicaLabel Replica indicator(s) along which data is de-duplicated
   ##
-  replicaLabel: [prometheus_replica]
+  replicaLabel: ["cluster"]
   ## Dynamically configure store APIs using DNS discovery
   ## @param query.dnsDiscovery.enabled Enable store APIs discovery via DNS
   ## @param query.dnsDiscovery.sidecarsService Sidecars service name to discover them using DNS discovery
   ## @param query.dnsDiscovery.sidecarsNamespace Sidecars namespace to discover them using DNS discovery
   ##
   dnsDiscovery:
-    enabled: false
-<<<<<<< HEAD
+    enabled: true
     sidecarsService: 
     sidecarsNamespace: 
-=======
     sidecarsService: "prometheus-thanos-discovery"
     sidecarsNamespace: "prometheus"
->>>>>>> 45761bcb1cfa2d346c1d8b90cb27a2fc412a9abe
   ## @param query.stores Statically configure store APIs to connect with Thanos Query
   ##
-  stores: ["aa040f2385f38414f82388a8a46a8e34-523797673.ap-northeast-2.elb.amazonaws.com:10901"]
+  stores: ["ae6c03b8b980e4a0296f6942ad3f02a1-1177500400.ap-northeast-2.elb.amazonaws.com:10901"]
   ## @param query.sdConfig Query Service Discovery Configuration
   ## Specify content for servicediscovery.yml
   ##
@@ -2707,7 +2697,7 @@ ruler:
   logFormat: logfmt
   ## @param ruler.replicaLabel Label to treat as a replica indicator along which data is de-duplicated
   ##
-  replicaLabel: "cluster"
+  replicaLabel: "dev_cluster"
   ## @param ruler.dnsDiscovery.enabled Dynamically configure Query APIs using DNS discovery
   ##
   dnsDiscovery:

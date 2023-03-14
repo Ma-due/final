@@ -2710,7 +2710,7 @@ prometheus:
 
     ## External labels to add to any time series or alerts when communicating with external systems
     ##
-    externalLabels: {"replica": "replica"}
+    externalLabels: {"cluster": "devops-cluster"}
 
     ## enable --web.enable-remote-write-receiver flag on prometheus-server
     ##
@@ -3112,7 +3112,7 @@ prometheus:
     thanos:
       image: quay.io/thanos/thanos:v0.30.1
       objectStorageConfig:
-        key: thanos.yaml
+        key: s3.yaml
         name: thanos-objstore-config
       # secretProviderClass:
       #   provider: gcp
