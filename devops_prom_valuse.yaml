@@ -2710,7 +2710,7 @@ prometheus:
 
     ## External labels to add to any time series or alerts when communicating with external systems
     ##
-    externalLabels: {"cluster": "devops-cluster"}
+    externalLabels: {"cluster": "devops-cluster", "replica": "dev"}
 
     ## enable --web.enable-remote-write-receiver flag on prometheus-server
     ##
@@ -2722,7 +2722,7 @@ prometheus:
 
     ## If true, the Operator won't add the external label used to denote replica name
     ##
-    replicaExternalLabelNameClear: false
+    replicaExternalLabelNameClear: true
 
     ## Name of the external label used to denote Prometheus instance name
     ##
@@ -2730,7 +2730,7 @@ prometheus:
 
     ## If true, the Operator won't add the external label used to denote Prometheus instance name
     ##
-    prometheusExternalLabelNameClear: false
+    prometheusExternalLabelNameClear: true
 
     ## External URL at which Prometheus will be reachable.
     ##
